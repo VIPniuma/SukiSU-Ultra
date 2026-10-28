@@ -1,3 +1,5 @@
+#pragma clang diagnostic ignored "-Wimplicit-fallthrough"
+#pragma clang diagnostic ignored "-Wimplicit-fallthrough-per-function"
 #include <linux/rcupdate.h>
 #include <linux/limits.h>
 #include <linux/rculist.h>
