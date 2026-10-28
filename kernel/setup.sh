@@ -43,13 +43,13 @@ setup_kernelsu() {
     cd "$GKI_ROOT/KernelSU"
     git stash && echo "[-] Stashed current changes."
     if [ "$(git status | grep -Po 'v\d+(\.\d+)*' | head -n1)" ]; then
-        git checkout main && echo "[-] Switched to main branch."
+        git checkout susfs-compat && echo "[-] Switched to main branch."
     fi
     git pull && echo "[+] Repository updated."
     if [ -z "${1-}" ]; then
-        git checkout main && echo "[-] Checked out latest tag."
+        git checkout susfs-compat && echo "[-] Checked out latest tag."
     else
-        git checkout main && echo "[-] Checked out $1." || echo "[-] Checkout default branch"
+        git checkout susfs-compat && echo "[-] Checked out $1." || echo "[-] Checkout default branch"
     fi
     cd "$DRIVER_DIR"
     ln -sf "$(realpath --relative-to="$DRIVER_DIR" "$GKI_ROOT/KernelSU/kernel")" "kernelsu" && echo "[+] Symlink created."
