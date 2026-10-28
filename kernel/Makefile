@@ -1,3 +1,4 @@
+ccflags-y += -Wno-implicit-fallthrough
 obj-$(CONFIG_KSU) := ksu.o
 ksu-y := ksu_main.o
 
